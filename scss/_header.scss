@@ -1,0 +1,48 @@
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    margin-left: 1 rem; 
+}
+
+.site-logo img {
+    height: auto; 
+}
+
+// Base styles for the header
+.site-header {
+    background-color: #ffffff; 
+    padding: 1rem 0; 
+
+    .main-navigation {
+      display: flex;
+      justify-content: space-between; 
+      align-items: center; // centre verticalt
+  
+      ul {
+        display: flex;
+        list-style: none; //pas de point
+        margin: 0;
+        padding: 0;
+  
+        li {
+          margin: 0 1rem; // espace entre les liens
+  
+          a {
+            color: #000000; 
+            text-decoration: none; // pas souligné
+            font-weight: bold; 
+            font-size: 1rem; 
+  
+            &:hover {
+              text-decoration: underline; // souligné
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  
