@@ -9,6 +9,7 @@
 <body <?php body_class(); ?>>
 
 <header id="masthead" class="site-header">
+<nav class="main-navigation">
     <div class="logo">
         <?php if ( has_custom_logo() ) : ?>
             <div class="site-logo">
@@ -16,15 +17,11 @@
             </div>
         <?php endif; ?>
     </div>
-
-    <nav class="main-navigation">
         <?php
             wp_nav_menu( array(
                 'theme_location' => 'menu-principal', 
                 'menu_id'        => 'primary-menu',
                 'container'      => 'div', 
-                'container_class'=> 'menu-{menu slug}-container',
-                'menu_class'     => 'menu', 
                 ) );
                 ?>
             </nav>

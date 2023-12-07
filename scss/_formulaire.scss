@@ -1,0 +1,100 @@
+ /* The Modal (background) */
+ .modal {
+     display: none;
+     /* caché par défault */
+     position: fixed;
+     z-index: 1;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     overflow: auto;
+     background-color: white;
+
+ }
+
+ /* Modal Content/Box */
+ .modal-content {
+     background-color: #fefefe;
+     margin: 15% auto;
+     padding: 20px;
+     border: 5px solid black;
+     width: 100%;
+     height: 100%;
+ }
+
+ /* The Close Button */
+ .close {
+     color: #aaa;
+     float: right;
+     font-size: 28px;
+     font-weight: bold;
+ }
+
+ .close:hover,
+ .close:focus {
+     color: black;
+     text-decoration: none;
+     cursor: pointer;
+ }
+
+ button #myBtn {
+    margin-top: 0;
+    background: #D8D8D8;
+    padding: 2rem 6rem !important;
+ }
+
+ .contact-titre {
+     font-size: 10em;
+     letter-spacing: -15px;
+     overflow: hidden;
+     /* Cache le texte qui déborde de son conteneur */
+     top: 0%;
+     left: 50%;
+     /* Centrer horizontalement */
+     transform: translate(-50%, -50%);
+     /* Ajustement pour centrer */
+ }
+
+
+ //Champs
+ // Centrer le formulaire lui-même si nécessaire
+ .wpcf7-form {
+     display: inline-block; // Permet au formulaire de ne pas prendre toute la largeur
+     width: 50%; // Définit la largeur du formulaire sur 50%
+     margin: auto; // Centrer automatiquement dans l'espace disponible
+ }
+
+ label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500; 
+    line-height: 18px;
+    letter-spacing: 0em; 
+    text-align: left;
+    margin-left: 0;
+}
+
+ .wpcf7 input[type="text"],
+ .wpcf7 input[type="email"],
+ .wpcf7 textarea {
+     width: 100%;
+     box-sizing: border-box; // La largeur inclut padding et bordure
+     border-radius: 8px; // Bordures arrondies
+     border: 1px solid #ccc; // Bordure grise par défaut
+     padding: 15px; // Espace intérieur suffisant
+     margin-bottom: 20px; // Espace entre les champs
+ }
+
+ .wpcf7 input[type="submit"] {
+     width: 100%;
+     box-sizing: border-box; // La largeur inclut padding et bordure
+     border-radius: 0px; // Bordures arrondies
+     border: 1px solid #ccc; // Bordure grise par défaut
+     padding: 15px; // Espace intérieur suffisant
+     margin-bottom: 20px; // Espace entre les champs
+ }
+
+ .wpcf7 {
+     text-align: center;
+ }
