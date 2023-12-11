@@ -48,17 +48,15 @@
 }
 
 /* The Modal (background) */
-.modal {
+#myModal.modal {
   display: none;
   /* caché par défault */
   position: fixed;
   z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+  width: 40%;
   background-color: white;
+  top: 10%;
+  left: 30%;
 }
 
 /* Modal Content/Box */
@@ -67,8 +65,6 @@
   margin: 15% auto;
   padding: 20px;
   border: 5px solid black;
-  width: 100%;
-  height: 100%;
 }
 
 /* The Close Button */
@@ -86,27 +82,36 @@
   cursor: pointer;
 }
 
-button #myBtn {
+button#myBtn {
   margin-top: 0;
   background: #D8D8D8;
-  padding: 2rem 6rem !important;
+  padding: 1rem 6rem;
+  font-family: Space Mono;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  border: none;
 }
 
-.contact-titre {
-  font-size: 10em;
-  letter-spacing: -15px;
+.contact-titre p {
+  color: black;
+  font-size: 4em;
   overflow: hidden;
   /* Cache le texte qui déborde de son conteneur */
-  top: 0%;
-  left: 50%;
-  /* Centrer horizontalement */
-  transform: translate(-50%, -50%);
-  /* Ajustement pour centrer */
+  font-family: Space Mono;
+  font-weight: 400;
+  font-style: italic;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  left: 0;
 }
 
 .wpcf7-form {
   display: inline-block;
-  width: 50%;
+  width: 65%;
   margin: auto;
 }
 
@@ -118,6 +123,7 @@ label {
   letter-spacing: 0em;
   text-align: left;
   margin-left: 0;
+  padding-bottom: 1rem;
 }
 
 .wpcf7 input[type=text],
@@ -127,8 +133,8 @@ label {
   box-sizing: border-box;
   border-radius: 8px;
   border: 1px solid #ccc;
-  padding: 15px;
-  margin-bottom: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .wpcf7 input[type=submit] {
@@ -137,18 +143,17 @@ label {
   border-radius: 0px;
   border: 1px solid #ccc;
   padding: 15px;
-  margin-bottom: 20px;
 }
 
 .wpcf7 {
-  text-align: center;
+  margin-left: 24%;
 }
 
 footer .site-footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 40Px;
+  height: 40px;
   background-color: #FFFFFF;
   color: #000000;
   text-align: center;
@@ -158,6 +163,7 @@ footer .site-footer {
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0em;
+  border-top: 1px solid black;
 }
 footer .site-footer .footer-menu {
   max-width: 100%;
