@@ -2,36 +2,25 @@
  #myModal.modal {
      display: none;
      /* caché par défault */
-     position: fixed;
+     position: sticky;
      z-index: 1;
-     width: 40%;
+     width: 35%;
      background-color: white;
-     top:10%;
+     top: 0%;
      left: 30%;
+     overflow: hidden;
  }
 
  /* Modal Content/Box */
  .modal-content {
      background-color: #fefefe;
-     margin: 15% auto;
-     padding: 20px;
+     margin: 0;
+     padding: 0;
      border: 5px solid black;
+     overflow: hidden;
  }
 
- /* The Close Button */
- .close {
-     color: #aaa;
-     float: right;
-     font-size: 28px;
-     font-weight: bold;
- }
 
- .close:hover,
- .close:focus {
-     color: black;
-     text-decoration: none;
-     cursor: pointer;
- }
 
  button#myBtn {
      margin-top: 0;
@@ -46,20 +35,26 @@
      border: none;
  }
 
+ p{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    margin-block: 0;
+ }
  .contact-titre {
-     p {
-         color: black;
-         font-size: 4em;
-         overflow: hidden;
-         /* Cache le texte qui déborde de son conteneur */
-         font-family: Space Mono;
-         font-weight: 400;
-         font-style: italic;
-         width: 100%;
-         top:0;
-         position: absolute;
-         left: 0;
-     }
+     overflow: hidden;
+     /* Cache le texte qui déborde de son conteneur */
+     display: flex;
+     flex-wrap: wrap;
+     color: black;
+     font-size: 4em;
+     font-family: Space Mono;
+     font-weight: 400;
+     font-style: italic;
+     width: 100%;
+     top: 0;
+     position: absolute;
+     left: -10%;
  }
 
  //Champs
@@ -67,7 +62,7 @@
  .wpcf7-form {
      display: inline-block; // Permet au formulaire de ne pas prendre toute la largeur
      width: 65%; // largeur du formulaire
-     margin: auto; 
+     margin-top: 35%;
  }
 
  label {

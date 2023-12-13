@@ -11,6 +11,7 @@ function theme_enqueue_styles() {
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
+//hook
 function custom_theme_setup() {
     // Enregistrement du menu principal
     register_nav_menus(array(

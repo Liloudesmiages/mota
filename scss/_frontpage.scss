@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+section.hero {
+    position: relative;
+    width: 100%;
+    background-image: url("../assets/concert.jpg");
+    min-height: 806px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  // Le titre doit être positionné absolument pour le superposer sur le hero
+  img.title {
+    position: absolute;
+    top: 18%;
+    left: 0;
+    width: auto;
+    height: auto;
+    z-index: 1;
+  }
+  
