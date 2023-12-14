@@ -66,7 +66,11 @@ nav {
   .menu-menu-principal-container {
     display: none;
   }
-  .site-logo {
+  .logo {
+    max-height: 40px;
+    display: flex;
+  }
+  .logo .site-logo {
     margin-left: 1em;
     margin-top: 5px;
   }
@@ -78,7 +82,7 @@ nav {
     flex-direction: column;
     cursor: pointer;
     top: 0;
-    right: 2%;
+    right: 10%;
     position: absolute;
     z-index: 11;
     background-color: #FFFFFF;
@@ -136,32 +140,20 @@ nav {
   button.menu-toggle.menu-opened #menu-content.toggled.toggled {
     display: flex;
   }
-  button.menu-toggle.menu-opened .menu-liens {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 35%;
-    gap: 4em;
-    z-index: 11;
-    background: #E00000;
+  button.menu-toggle.menu-opened #menu-content.menu-content toggled .menu-liens {
+    top: 0;
   }
-  button.menu-toggle.menu-opened .menu-liens a {
+  button.menu-toggle.menu-opened #menu-content.menu-content toggled .menu-liens a {
     font-family: Space Mono;
     font-size: 44px;
     font-weight: 400;
     line-height: 65px;
     letter-spacing: 0em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    color: #FFFFFF;
+    color: white !important;
     background: #E00000;
-    text-decoration: none;
+    text-decoration: none !important;
   }
-  button.menu-toggle.menu-opened .menu-liens:hover {
+  button.menu-toggle.menu-opened #menu-content.menu-content toggled .menu-liens:hover {
     text-decoration: underline;
   }
 }
@@ -263,56 +255,112 @@ label {
   margin-left: 24%;
 }
 
-footer .site-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  background-color: #FFFFFF;
-  color: #000000;
-  text-align: center;
-  padding: 20px 0;
-  font-family: Space Mono;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0em;
-  border-top: 1px solid black;
+@media (min-width: 771px) {
+  footer .site-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #FFFFFF;
+    color: #000000;
+    text-align: center;
+    padding: 20px 0;
+    font-family: Space Mono;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    border-top: 1px solid black;
+  }
+  footer .site-footer .footer-menu {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .site-footer .footer-navigation ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    text-decoration: none;
+  }
+  footer .site-footer .footer-navigation li {
+    margin: 0 3rem;
+  }
+  footer .site-footer .footer-navigation a {
+    color: #000000;
+    text-decoration: none;
+  }
+  footer .site-footer .footer-navigation a:hover {
+    text-decoration: underline;
+  }
+  footer .site-footer .footer-navigation #menu-item-79 {
+    pointer-events: none; /* Empêche le clic sur le lien */
+    cursor: default; /* Affiche le curseur par défaut au lieu du pointeur de lien */
+    text-decoration: none; /* Enlève le soulignement */
+  }
+  footer .site-footer .footer-navigation #menu-item-79 a {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none; /* Assurez-vous que le soulignement est également enlevé pour le lien lui-même */
+  }
 }
-footer .site-footer .footer-menu {
-  max-width: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media (max-width: 770px) {
+  .site-footer {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    z-index: 20;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: Space Mono;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    border-top: 1px solid black;
+  }
+  .site-footer .footer-menu {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .site-footer .footer-navigation ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+  }
+  .site-footer .footer-navigation li {
+    margin-top: 5px;
+  }
+  .site-footer .footer-navigation a {
+    color: #000000;
+    text-decoration: none;
+  }
+  .site-footer .footer-navigation a:hover {
+    text-decoration: underline;
+  }
+  .site-footer .footer-navigation #menu-item-79 {
+    pointer-events: none; /* Empêche le clic sur le lien */
+    cursor: default; /* Affiche le curseur par défaut au lieu du pointeur de lien */
+    text-decoration: none; /* Enlève le soulignement */
+  }
+  .site-footer .footer-navigation #menu-item-79 a {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none; /* Assurez-vous que le soulignement est également enlevé pour le lien lui-même */
+  }
 }
-footer .site-footer .footer-navigation ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  text-decoration: none;
-}
-footer .site-footer .footer-navigation li {
-  margin: 0 3rem;
-}
-footer .site-footer .footer-navigation a {
-  color: #000000;
-  text-decoration: none;
-}
-footer .site-footer .footer-navigation a:hover {
-  text-decoration: underline;
-}
-footer .site-footer .footer-navigation #menu-item-79 {
-  pointer-events: none; /* Empêche le clic sur le lien */
-  cursor: default; /* Affiche le curseur par défaut au lieu du pointeur de lien */
-  text-decoration: none; /* Enlève le soulignement */
-}
-footer .site-footer .footer-navigation #menu-item-79 a {
-  pointer-events: none;
-  cursor: default;
-  text-decoration: none; /* Assurez-vous que le soulignement est également enlevé pour le lien lui-même */
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -339,11 +387,11 @@ img.title {
 @keyframes moveInRight {
   from {
     opacity: 0;
-    transform: translateX(-200px);
+    transform: translateX(-200%);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(-40%);
   }
 }
 /* Application de l'animation au menu*/
@@ -357,14 +405,18 @@ img.title {
   letter-spacing: 0em;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-  margin-top: 35%;
-  gap: 4em;
+  margin-top: 80px;
+  gap: 2em;
   z-index: 11;
   background: #E00000;
   text-align: center;
   color: #FFFFFF;
   text-decoration: none;
+  padding-top: 1em;
+  padding-left: 4em;
+  padding-right: 9em;
+  padding-bottom: 7em;
   animation: moveInRight 3s ease-out forwards;
 }/*# sourceMappingURL=style.css.map */

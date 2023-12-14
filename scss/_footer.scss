@@ -1,3 +1,4 @@
+@media (min-width: 771px) {
 footer {
   .site-footer {
     position: fixed;
@@ -33,6 +34,71 @@ footer {
 
       li {
         margin: 0 3rem; // Espacement horizontal entre les éléments de menu
+      }
+
+      a {
+        color: #000000; // Liens noirs
+        text-decoration: none; // Pas de soulignement
+
+        &:hover,
+        {
+        text-decoration: underline; // Soulignement au survol
+      }
+    }
+    #menu-item-79 {
+      pointer-events: none; /* Empêche le clic sur le lien */
+      cursor: default; /* Affiche le curseur par défaut au lieu du pointeur de lien */
+      text-decoration: none; /* Enlève le soulignement */
+    }
+    
+    #menu-item-79 a {
+      pointer-events: none;
+      cursor: default;
+      text-decoration: none; /* Assurez-vous que le soulignement est également enlevé pour le lien lui-même */
+    }
+  }
+}
+}
+}
+@media (max-width: 770px) {
+  .site-footer {
+    width: 100%;
+    height:200px;
+    display: flex;
+    flex-direction: column;
+    z-index: 20;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #FFFFFF; 
+    color: #000000;
+    font-family: Space Mono;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    border-top: 1px solid black;
+
+    .footer-menu {
+      max-width: 100%; // La largeur maximale du contenu du footer
+      margin: 0 auto; // Centrer le container
+      display: flex;
+      flex-direction: column;
+      justify-content: center; // Centrer les éléments horizontalement
+      align-items: center; // Centrer les éléments verticalement
+    }
+
+    .footer-navigation {
+      ul {
+        list-style: none; // Supprimer les puces de liste
+        padding: 0; // Supprimer le padding par défaut
+        display: flex; 
+        flex-direction: column;
+        text-decoration: none; // Pas de soulignement 
+      }
+
+      li {
+        margin-top: 5px; // Espacement horizontal entre les éléments de menu
       }
 
       a {
