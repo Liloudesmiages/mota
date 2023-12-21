@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    /*
     // Obtenir le bouton qui ouvre la modale
     var btn = document.getElementById("myBtn");
 
@@ -7,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var modal = document.getElementById("myModal");
 
     // Ouvrir la modale lorsque l'utilisateur clique sur le bouton
-    btn.onclick = function() {
+   /* btn.onclick = function() {
         modal.style.display = "block";
     }
 
@@ -16,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.target == modal) {
             modal.style.display = "none";
         }
-    }
+    }*/
 
     //Lien contact du menu vers la modale
     var contactMenuLink = document.querySelector('.open-contact-modal'); // Utilisez la classe que vous avez ajoutée
@@ -26,30 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('myBtn').click(); // Déclenche le clic sur le bouton
     });
 
-    // Image aléatoire pour le hero
-    var hero = document.getElementById('hero');
-    var images = [
-        '../assets/amoureux-dansant.jpg', 
-        '../assets/concert.jpg', 
-        '../assets/dansons.jpg', 
-        '../assets/preparatifs.jpg', 
-        '../assets/trinquons.jpg', 
-        '../assets/buvons.jpg', 
-        '../assets/mariage.jpg', 
-        '../assets/demoiselles-d-honneur.jpg', 
-        '../assets/maries.jpg', 
-        '../assets/match.jpg', 
-        '../assets/anniversaire.jpg', 
-        '../assets/baiser-des-maries.jpg', 
-        '../assets/bal-masque.jpg', 
-        '../assets/maries.jpg', 
-    ];
-
-    var bgImage = images[Math.floor(Math.random() * images.length)];
-
-    // Définissez l'image comme fond du hero
-    hero.style.backgroundImage = 'url(' + bgImage + ')';
-*/
     //MENU
   const menu = document.getElementById("menu-content"); // Utilisation de l'ID du conteneur du menu
   // Sélection du bouton
@@ -74,7 +49,31 @@ document.addEventListener('DOMContentLoaded', function() {
       toggleMenu();
     });
   });
+
+//Requête AJAX
+jQuery(document).ready(function($) {
+  function filterPhotos() {
+      var categorie = $('#categorie-select').val();
+      var format = $('#format-select').val();
+
+      $.ajax({
+          url: ajaxurl, // variable doit être définie dans WordPress
+          type: 'POST',
+          data: {
+              action: 'filter_photos', // Le nom de l'action WordPress à exécuter
+              categorie: categorie,
+              format: format
+          },
+          success: function(response) {
+              $('#photos-container').html(response); // Mettez à jour la liste des photos
+          }
+      });
+  }
+
+  // Ajoutez des écouteurs d'événements pour les champs de sélection
+  $('#categorie-select, #format-select').on('change', function() {
+      filterPhotos();
+  });
 });
-
-
+});
 

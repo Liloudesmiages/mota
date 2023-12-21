@@ -1,24 +1,25 @@
 body {
   margin: 0;
   padding: 0;
+  margin-top: 0;
 }
 
-section.hero {
-    position: relative;
-    width: 100%;
-    background-image: url("../assets/concert.jpg");
-    min-height: 806px;
-    background-size: cover;
-    background-repeat: no-repeat;
+.hero {
+  display: flex;
+  position: relative;
+  width: 100vw;
+  height: 962px;
+
+  img {
+    object-fit: cover;
   }
-  
-  // Le titre doit être positionné absolument pour le superposer sur le hero
-  img.title {
-    position: absolute;
-    top: 18%;
-    left: 0;
-    width: auto;
-    height: auto;
-    z-index: 1;
-  }
-  
+}
+
+// Le titre doit être positionné absolument pour le superposer sur le hero
+img.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}

@@ -1,0 +1,112 @@
+.marge {
+    position: sticky;
+    top: 80px;
+    height: 15px;
+    background-image: linear-gradient(to bottom, #d3d3d3, #ffffff);
+    width: 100vw;
+    z-index: 10;
+}
+
+section {
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 5%;
+}
+
+.fiche1 {
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.5em;
+
+    .infos {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-bottom: 2em;
+
+        h2 {
+            font-family: Space Mono;
+            font-size: 66px;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 58px;
+            letter-spacing: 0em;
+            text-align: left;
+            margin-bottom: 0;
+            padding-left: 0;
+        }
+
+        .reference,
+        .custom-taxonomy,
+        .type,
+        .annee {
+            font-family: Space Mono;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            letter-spacing: 0.1em;
+            text-align: left;
+            margin-top: 1em;
+        }
+    }
+
+    .photo {
+        width: 50vw;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .formulaire {
+        padding-top: 3em;
+        padding-bottom: 3em;
+        width: 50vw;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+
+        h3 {
+            font-family: Space Mono;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            letter-spacing: 0.1em;
+            text-align: left;
+        }
+    }
+
+    .fiche2 {
+        height: 40vh;
+        display: flex;
+        flex-direction: row;
+        gap: 1.5em;
+        padding-top: 15%;
+        padding-bottom: 25%;
+        object-fit: contain;
+
+        .formulaire,
+        .photos {
+            flex: 1;
+            /* Chaque colonne prendra 50% de l'espace disponible */
+
+            .photo1 {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.custom-taxonomy a {
+    color: black;
+    text-decoration: none;
+}

@@ -12,9 +12,10 @@
             ?>
         </nav>
 
-        <!-- formulaire contact -->
+        <!-- formulaire contact voir single-page-->
         <?php get_template_part('templates_part/contact'); ?>
     </footer>
     <?php wp_footer(); ?> <!--Code nécessaire dans le footer au fonctionnement de wordpress -->
     </body>
+
     </html>
