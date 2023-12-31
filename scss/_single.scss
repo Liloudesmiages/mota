@@ -7,6 +7,22 @@
     z-index: 10;
 }
 
+.photoslist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+    .photobook {
+        width: 45%;
+
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+
+
 section {
     margin-left: 8%;
     margin-right: 8%;

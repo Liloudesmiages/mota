@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 //Requête AJAX
-jQuery(document).ready(function($) {
+/*jQuery(document).ready(function($) {
   function filterPhotos() {
-      var categorie = $('#categorie-select').val();
-      var format = $('#format-select').val();
+      var categorie = $('#categorie').val();
+      var format = $('#format').val();
 
       $.ajax({
           url: ajaxurl, // variable doit être définie dans WordPress
@@ -65,15 +65,15 @@ jQuery(document).ready(function($) {
               format: format
           },
           success: function(response) {
-              $('#photos-container').html(response); // Mettez à jour la liste des photos
+              $('#photos').html(response); // Mettez à jour la liste des photos
           }
       });
   }
 
   // Ajoutez des écouteurs d'événements pour les champs de sélection
-  $('#categorie-select, #format-select').on('change', function() {
+  $('#categorie, #format').on('change', function() {
       filterPhotos();
   });
 });
 });
-
+*/
