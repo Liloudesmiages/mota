@@ -7,6 +7,7 @@
     z-index: 10;
 }
 
+<<<<<<< HEAD
 .photoslist {
     display: flex;
     flex-wrap: wrap;
@@ -28,101 +29,260 @@ section {
     margin-right: 8%;
     margin-top: 5%;
 }
+=======
+#fiche {
+    margin-top: 5em;
+    margin-right: 18em;
+    margin-left: 18em;
+>>>>>>> new-branch
 
-.fiche1 {
-    height: 50vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1.5em;
-
-    .infos {
-        width: 50vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        margin-bottom: 2em;
-
-        h2 {
-            font-family: Space Mono;
-            font-size: 66px;
-            font-style: italic;
-            font-weight: 400;
-            line-height: 58px;
-            letter-spacing: 0em;
-            text-align: left;
-            margin-bottom: 0;
-            padding-left: 0;
-        }
-
-        .reference,
-        .custom-taxonomy,
-        .type,
-        .annee {
-            font-family: Space Mono;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 21px;
-            letter-spacing: 0.1em;
-            text-align: left;
-            margin-top: 1em;
-        }
+    @media (max-width: 1550px) {
+        margin-top: 2em;
+        margin-right: 3.5em;
+        margin-left: 3.5em;
     }
 
-    .photo {
-        width: 50vw;
-
-        img {
-            width: 100%;
-        }
-    }
-
-    .formulaire {
-        padding-top: 3em;
-        padding-bottom: 3em;
-        width: 50vw;
-        height: 10vh;
+    .fiche1 {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
+        gap: 1.5em;
+        flex: 1;
+        /* Chaque colonne prendra 50% de l'espace disponible */
 
-        h3 {
-            font-family: Space Mono;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 21px;
-            letter-spacing: 0.1em;
-            text-align: left;
+        @media (max-width:690px) {
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: space-between;
+                gap: 1.5em;
+                flex: 1;
+                flex-wrap: wrap;
+        }
+
+        .infos {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            margin-bottom: 2em;
+
+            @media (max-width:690px) {
+                width: 100%; 
+            }
+
+            .container-title {
+                width: 20%;
+
+                h2 {
+                    font-family: Space Mono;
+                    font-size: 66px;
+                    font-style: italic;
+                    font-weight: 400;
+                    line-height: 58px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    margin-bottom: 0;
+                    padding-left: 0;
+                    margin-left: 0;
+                }
+            }
+
+            .reference,
+            #categorie,
+            #format,
+            .custom-taxonomy,
+            .type,
+            .annee {
+                font-family: Space Mono;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 21px;
+                letter-spacing: 0.1em;
+                text-align: left;
+                margin-top: 1em;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
+
+        .photo {
+            width: 50%;
+
+            @media (max-width:690px) {
+                width: 100%; 
+                margin-top: 80px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 
-    .fiche2 {
-        height: 40vh;
+    .bloc-central {
         display: flex;
         flex-direction: row;
-        gap: 1.5em;
-        padding-top: 15%;
-        padding-bottom: 25%;
-        object-fit: contain;
+        gap: 8em;
 
-        .formulaire,
-        .photos {
-            flex: 1;
-            /* Chaque colonne prendra 50% de l'espace disponible */
+        @media (max-width: 700px) {
+            gap: 1em
+        }
 
-            .photo1 {
+        .formulaire {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            width: 50%;
+            height: 10vh;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+
+            @media (max-width:690px) {
+                width: 100%; 
+            }
+
+            p {
+                font-family: Poppins;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 21px;
+                letter-spacing: 0em;
+            }
+
+            button#myBtn {
+                display: block;
+                margin-top: auto;
+                margin-bottom: auto;
+                margin-right: 0;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .miniature {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            justify-content: flex-end;
+            align-items: flex-end;
+
+            @media (max-width: 690px) {
+                display: none;
+            }
+
+            #conteneur-miniature {
+                /* masqué par défaut */
+                margin-top: 10px;
+                width: 80px;
+                height: 80px;
+
                 img {
-                    width: 100%;
+                    width: 80px;
+                    height: 80px;
+                    display: none;
+                }
+            }
+
+            .flèches {
+                display: flex;
+                flex-direction: row;
+                width: 20vh;
+                gap: 15px;
+                justify-content: flex-end;
+                align-items: center;
+
+                #fleche-precedente {
+                    font-size: 2em;
+                }
+
+                #fleche-suivante {
+                    font-size: 2em;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: black;
                 }
             }
         }
     }
-}
 
-.custom-taxonomy a {
-    color: black;
-    text-decoration: none;
-}
+        .fiche2 {
+            #photos {
+                padding-top: 2em;
+
+                h3 {
+                    font-family: Space Mono;
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 27px;
+                    letter-spacing: 0.1em;
+                    text-align: left;
+                }
+
+                .photoslist {
+                    margin-top: 2em;
+                    flex: 1;
+                    /* Chaque colonne prendra 50% de l'espace disponible */
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    gap: 25px;
+
+                    @media (max-width:690px) {
+                        flex-wrap: wrap;
+                    }
+
+                    .photobook {
+                        width: 50%;
+
+                        img {
+                            width: 100%;
+                            height: 30em;
+                            object-fit: cover;
+                        }
+                        
+                      @media (max-width:690px) {
+                        width: 100%;
+                      }  
+                    }
+                }
+            }
+        }
+
+        .custom-taxonomy a {
+            color: black;
+            text-decoration: none;
+        }
+
+        button {
+            display: block;
+            margin: 5em auto;
+            padding: 22px 55px;
+            border: none;
+            background: #D8D8D8;
+
+            &.toutes-les-photos {
+                a {
+                    font-family: Space Mono;
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 18px;
+                    letter-spacing: 0em;
+                    text-decoration: none;
+                    color: black;
+                    padding: 12px 55px;
+                }
+            }
+        }
+    }
