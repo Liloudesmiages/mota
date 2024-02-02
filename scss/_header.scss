@@ -1,184 +1,201 @@
 #masthead {
   position: fixed;
   width: 100%;
-  top:0;
+  top: 0;
   height: 80px;
   z-index: 11;
   background-color: #ffffff;
-}
 
-nav {
-  display: flex;
-  justify-content: space-between;
-}
+  @media (max-width: 785px) {
+    height: 120px;
+  }
 
-#site-navigation {
-  margin-top: 20px;
-}
-  .site-logo {
+  nav {
     display: flex;
-    margin-left: 6rem;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  #site-navigation {
     margin-top: 20px;
   }
 
-@media (min-width: 771px) {
-  .menu-menu-principal-container {
+  .site-logo {
     display: flex;
-    justify-content: space-between;
-    font-family: Space Mono;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0em;
-    margin-right: 6rem;
+    margin-left: 6rem;
+    margin-top: 25px;
+
+    @media (max-width: 785px) {
+      margin-top: 40px;
+      margin-left: 1em;
+    }
   }
 
-  .menu-content {
-    display: none;
-  }
-.menu-liens {
-  display: none;
-}
-  .main-navigation {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-    .menu-toggle {
-      display: none;
-      /* Cache le bouton hamburger */
+  @media (min-width: 771px) {
+    .menu-menu-principal-container {
+      display: flex;
+      justify-content: space-between;
+      font-family: Space Mono;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0em;
+      margin-right: 6rem;
     }
 
-    ul {
+    .menu-content {
+      display: none;
+    }
+
+    .main-navigation {
       width: 100%;
       display: flex;
       justify-content: space-between;
-      list-style: none; //pas de point
 
-      li {
-        margin: 0 1rem; // espace entre les liens
+      .menu-toggle {
+        display: none;
+      }
 
-        a {
-          color: #000000;
-          text-decoration: none; // pas souligné
+      ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
 
-          &:hover {
-            text-decoration: underline; // souligné
+        li {
+          margin: 0 1rem;
+
+          a {
+            color: #000000;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }
     }
   }
-}
 
-/* Afficher le bouton hamburger et cacher les liens du menu en mode mobile */
-@media (max-width: 770px) {
-  .menu-menu-principal-container {
-    display: none;
-  }
+  @media (max-width: 770px) {
+    .menu-menu-principal-container {
+      opacity: 0;
+      visibility: hidden;
+    }
 
-.logo {
-max-height: 40px;
-display: flex;
-.site-logo {
-  margin-left: 1em;
-  margin-top: 5px;
-}
-}
-#menu-content {
-  display: none;
-}
+    .logo {
+      max-height: 40px;
+      display: flex;
+    }
 
-  button.menu-toggle {
+    #menu-content {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    button.menu-toggle {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      top: 55px;
+      right: 5%;
+      position: absolute;
+      z-index: 11;
+      background-color: #FFFFFF;
+      border: none;
+
+      .line {
+        width: 3em;
+        height: 2px;
+        background-color: #000;
+        margin: 5px auto;
+        top: 0;
+      }
+
+      &.menu-opened {
+        z-index: 11;
+        margin-left: 0;
+
+        .line {
+          display: none;
+        }
+
+        &:before,
+        &:after {
+          position: absolute;
+          content: '';
+          height: 2px;
+          width: 3em;
+          top: 50%;
+          margin-top: -1px;
+          background-color: #000;
+        }
+
+        &:before {
+          transform: rotate(45deg);
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    #menu-content.toggled {
+    opacity: 1;
+    visibility: visible;
+    animation: moveInRight 3s ease-out forwards;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
-    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0;
+    right: 0;
+    left: 0;
     top: 0;
-    right: 10%;
     position: absolute;
-    z-index: 11;
-    background-color: #FFFFFF;
-    border: none;
 
-    /* Lignes du bouton hamburger */
-    .line {
-      width: 3em;
-      height: 2px;
-      background-color: #000;
-      margin: 5px auto;
-      top: 0;
+      .menu-liens {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        margin-top: 100px;
+
+        a {
+          font-family: Space Mono;
+          font-size: 44px;
+          font-weight: 400;
+          line-height: 65px;
+          letter-spacing: 0em;
+          color: white !important;
+          background: #E00000;
+          text-decoration: none !important;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
     }
 
-    /* CSS pour le bouton lorsqu'il est cliqué : X */
-    &.menu-opened {
-      z-index: 11;
-      margin-left: 80%;
-      
-      .line {
-        display: none;
-        /* Cache le bouton hamburger */
-      }
+  }
+}
 
-      &:before,
-      &:after {
-        position: absolute;
-        content: '';
-        height: 2px;
-        /* Hauteur des barres de la croix */
-        width: 3em;
-        /* Largeur des barres de la croix */
-        top: 50%;
-        margin-top: -1px;
-        /* Centre les barres verticalement */
-        background-color: #000;
-        /* Couleur des barres de la croix */
-      }
+.single #masthead {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
 
-      &:before {
-        transform: rotate(45deg);
-        /* Incline la barre du haut pour former une croix */
-      }
-
-      &:after {
-        transform: rotate(-45deg);
-        /* Incline la barre du bas pour former une croix */
-      }
-
-/* CSS pour afficher la liste lorsque le menu est ouvert */
- #menu-content.toggled {
+#primary-menu2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background: #E00000;
-  z-index: 6;
-
-  //bouton ouvert
-  &.toggled {
-    display: flex; //afficher le menu
-  }
-}
-
-#menu-content.menu-content toggled{
-.menu-liens {
-top: 0;
-a {
-    font-family: Space Mono;
-    font-size: 44px;
-    font-weight: 400;
-    line-height: 65px;
-    letter-spacing: 0em;
-    color: white !important;
-    background: #E00000;
-    text-decoration: none !important;
-  }
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-    }
-  }
+  gap: 38px;
 }

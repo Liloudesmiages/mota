@@ -36,9 +36,14 @@
             </button>
             <div id="menu-content" class="menu-content">
                 <div class="menu-liens">
-                    <a href="#menu-item-68">ACCUEIL</a>
-                    <a href="#menu-item-67">Á PROPOS</a>
-                    <a href="#menu-item-69">CONTACT</a>
+                    <?php
+                     wp_nav_menu(array(
+                        'theme_location' => 'menu-principal',
+                        'menu_id'        => 'primary-menu2',
+                        'container'      => 'div',
+                        'container_class' => 'pm2',
+                    ));
+                    ?>
                 </div>
         </div>
         </nav>

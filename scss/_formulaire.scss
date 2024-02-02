@@ -1,102 +1,135 @@
- /* The Modal (background) */
+ /* The Modal */
  #myModal.modal {
-     display: none;
-     /* caché par défault */
-     position: sticky;
-     z-index: 1;
-     width: 35%;
-     background-color: white;
-     top: 0%;
-     left: 30%;
-     overflow: hidden;
- }
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 30%;
+    background-color: white;
+    top: 15%;
+    min-width: 500px;
+    left: 30%;
+    overflow: hidden;
 
- /* Modal Content/Box */
- .modal-content {
-     background-color: #fefefe;
-     margin: 0;
-     padding: 0;
-     border: 5px solid black;
-     overflow: hidden;
- }
-
-.banner {
-    width: 100%;
+    @media (max-width: 771px) {
+       position: absolute;
+       top: 15%;
+       width: 100%;
+       left:0;
+       min-width: unset;
+    }
 }
 
- button#myBtn {
-     margin-top: 0;
-     background: #D8D8D8;
-     padding: 1rem 6rem;
-     font-family: Space Mono;
-     font-size: 12px;
-     font-weight: 400;
-     line-height: 18px;
-     letter-spacing: 0em;
-     text-align: left;
-     border: none;
- }
+/* Modal Content/Box */
+.modal-content {
+    display: flex;
+    justify-content: center;
+    background-color: #fefefe;
+    margin: 0;
+    padding: 0;
+    border: 5px solid black;
+    overflow: hidden;
+}
 
- p{
+button#myBtn {
+    margin-top: 0;
+    background: #D8D8D8;
+    padding: 1rem 6rem;
+    font-family: Space Mono;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    border: none;
+}
+
+p {
     display: flex;
     flex-wrap: wrap;
     margin: 0;
     margin-block: 0;
- }
- .contact-titre {
-     overflow: hidden;
-     /* Cache le texte qui déborde de son conteneur */
-     display: flex;
-     flex-wrap: wrap;
-     color: black;
-     font-size: 4em;
-     font-family: Space Mono;
-     font-weight: 400;
-     font-style: italic;
-     width: 100%;
-     top: 0;
-     position: absolute;
-     left: -10%;
- }
+}
 
- //Champs
- // Centrer le formulaire lui-même si nécessaire
- .wpcf7-form {
-     display: inline-block; // Permet au formulaire de ne pas prendre toute la largeur
-     width: 65%; // largeur du formulaire
-     margin-top: 35%;
- }
+//Champs
+.wpcf7-form {
+    margin-top: 1%;
+}
 
- label {
-     font-family: 'Poppins', sans-serif;
-     font-size: 12px;
-     font-weight: 500;
-     line-height: 18px;
-     letter-spacing: 0em;
-     text-align: left;
-     margin-left: 0;
-     padding-bottom: 1rem;
- }
+label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 0;
+    padding-bottom: 1rem;
+    padding-left: 8em;
+    padding-right: 2em;
 
- .wpcf7 input[type="text"],
- .wpcf7 input[type="email"],
- .wpcf7 textarea {
-     width: 100%;
-     box-sizing: border-box; // La largeur inclut padding et bordure
-     border-radius: 8px; // Bordures arrondies
-     border: 1px solid #ccc; // Bordure grise par défaut
-     padding: 10px; // Espace intérieur suffisant
-     margin-bottom: 10px; // Espace entre les champs
- }
+    @media (max-width: 1400px) {
+       padding-left: 2em;
+} 
+}
 
- .wpcf7 input[type="submit"] {
-     width: 100%;
-     box-sizing: border-box; // La largeur inclut padding et bordure
-     border-radius: 0px; // Bordures arrondies
-     border: 1px solid #ccc; // Bordure grise par défaut
-     padding: 15px; // Espace intérieur suffisant
- }
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea {
+    width: 100%;
+    box-sizing: border-box; // La largeur inclut padding et bordure
+    border-radius: 8px; // Bordures arrondies
+    border: 1px solid #ccc; // Bordure grise par défaut
+    padding: 10px; // Espace intérieur suffisant
+    margin-bottom: 10px; // Espace entre les champs
+}
 
- .wpcf7 {
-     margin-left: 24%;
- }
+.wpcf7 input[type="submit"] {
+    display: block;
+    margin-left: 8em;
+    margin-right: 1.5em;
+    margin-bottom: 2em;
+    width: 60%;
+    box-sizing: border-box; 
+    border: 1px solid #ccc; 
+    padding: 15px; 
+    background: #D8D8D8;
+    ;
+}
+
+.wpcf7 {
+    margin-right: 0%;
+    margin-left: 0%;
+}
+
+wpcf7-form.init {
+    display: flex;
+    justify-content: center;
+}
+
+
+img.banner.lazyloaded {
+    width: 125%;
+    margin-left: -3em;
+    margin-bottom: 3em;
+}
+.close-modal {
+   position: absolute;
+   top: 10px;
+   right: 15px;
+   font-size: 25px;
+   cursor: pointer;
+   z-index: 99999999;
+}
+
+
+img.banner {
+    width: 150%;
+    left: -130px;
+    position: absolute;
+}
+
+.debut{
+    margin-top: 130px;
+}
+
+
