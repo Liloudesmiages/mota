@@ -7,14 +7,14 @@ document.addEventListener("DOMContentLoaded", function () {
   contactMenuLink.addEventListener("click", function (event) {
     event.preventDefault(); // Empêche la navigation vers le lien (ne recharge pas la page ou ne suit pas l'URL du lien)
     modal.style.display = "block"; // Affiche la fenêtre modale
-  });
+  }); 
 
   contactMenuLinkMobile.addEventListener("click", function (event) {
     event.preventDefault(); // Empêche la navigation vers le lien (ne recharge pas la page ou ne suit pas l'URL du lien)
     modal.style.display = "block"; // Affiche la fenêtre modale
   });
 
-  // Fermer la modale lorsque l'utilisateur clique en dehors du contenu de la modale
+// Fermer la modale lorsque l'utilisateur 
   var modal = document.getElementById("myModal");
   var closeModal = document.querySelector(".close-modal");
 
@@ -23,9 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       modal.style.display = "none";
     });
   }
-});
 
-document.addEventListener("DOMContentLoaded", function () {
   // Obtenir le bouton qui ouvre la modale
   var btn = document.getElementById("myBtn");
   // Obtenir la modale
@@ -159,8 +157,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //Miniatures avec flèches
-
-
 document.addEventListener("DOMContentLoaded", function() {
   const flechePrecedente = document.getElementById("fleche-precedente");
   const flecheSuivante = document.getElementById("fleche-suivante");

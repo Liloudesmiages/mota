@@ -44,7 +44,7 @@ get_header();
             </div>
             <?php
 
-            $prev_post = get_adjacent_post(false, '', true);
+            $prev_post = get_adjacent_post(false, '', false);
             $next_post = get_adjacent_post(false, '', false);
 
             $prev_post_thumbnail = '';

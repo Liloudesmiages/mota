@@ -94,7 +94,7 @@ function filter_photos()
 
     $numberpages = $my_query->max_num_pages; ?>
     <input type="hidden" id="maxpages" value="<?php echo $numberpages; ?>">
-    <?php
+    <?php // le code crée un champ HTML masqué dans lequel il stocke le nombre total de pages
     ob_start();
     if ($my_query->have_posts()) : while ($my_query->have_posts()) : $my_query->the_post();
             $images = get_field('photo'); // nom champ galerie ACF
@@ -255,14 +255,14 @@ add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 // Fonction pour traiter la requête AJAX de la miniature
 function handle_adjacent_post() {
     check_ajax_referer('my_nonce', 'nonce');
-
+//récupère la direction de navigation (prev ou next) et l'identifiant de l'article actuel.
     $direction = $_POST['direction'];
     $post_id = $_POST['id'];
 
     $in_same_term = false;
     $excluded_terms = '';
     $previous = $direction === 'prev';
-
+//pour obtenir l'article adjacent selon la direction. Si un article est trouvé, récupère son URL de miniature 
     $adjacent_post = get_adjacent_post($in_same_term, $excluded_terms, $previous);
 
     if (!empty($adjacent_post)) {

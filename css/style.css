@@ -242,12 +242,13 @@ label {
   text-align: left;
   margin-left: 0;
   padding-bottom: 1rem;
-  padding-left: 8em;
-  padding-right: 2em;
+  padding-left: 1em;
 }
 @media (max-width: 1400px) {
   label {
-    padding-left: 2em;
+    padding-left: 0;
+    margin-left: 3em;
+    margin-right: 3em;
   }
 }
 
@@ -264,8 +265,7 @@ label {
 
 .wpcf7 input[type=submit] {
   display: block;
-  margin-left: 8em;
-  margin-right: 1.5em;
+  margin-left: 5em;
   margin-bottom: 2em;
   width: 60%;
   box-sizing: border-box;
@@ -286,7 +286,7 @@ wpcf7-form.init {
 
 img.banner.lazyloaded {
   width: 125%;
-  margin-left: -3em;
+  margin-left: 2em;
   margin-bottom: 3em;
 }
 

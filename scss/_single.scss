@@ -7,34 +7,10 @@
     z-index: 10;
 }
 
-<<<<<<< HEAD
-.photoslist {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    
-    .photobook {
-        width: 45%;
-
-        img {
-            max-width: 100%;
-        }
-    }
-}
-
-
-
-section {
-    margin-left: 8%;
-    margin-right: 8%;
-    margin-top: 5%;
-}
-=======
 #fiche {
     margin-top: 5em;
     margin-right: 18em;
     margin-left: 18em;
->>>>>>> new-branch
 
     @media (max-width: 1550px) {
         margin-top: 2em;
